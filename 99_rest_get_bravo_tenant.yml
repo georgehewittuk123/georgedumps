@@ -16,5 +16,9 @@
   - name: Debug API Response
     debug:
       var: query_result
-  
+      
+    # Optionally debug specific parts of the response
+  - name: Debug specific part of API Response
+    debug:
+      msg: "The tenants are: {{ query_result.json.imdata }}"
  
