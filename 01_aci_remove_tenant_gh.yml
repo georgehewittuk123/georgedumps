@@ -1,0 +1,26 @@
+---
+- name: ENSURE APPLICATION CONFIGURATION EXISTS
+  hosts: apic
+  connection: local
+  gather_facts: False
+  vars_prompt:
+    - name: "tenant"
+      prompt: "What would you like to name your Tenant?"
+      private: no
+
+  tasks:
+    - name: Remove Tenant if Exists
+      aci_tenant:
+        host: "{{ ansible_host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "absent"
+        validate_certs: False
+        tenant: "{{ tenant }}"
+      register: tenant_removal_result # Capture the result
+
+    - name: Display result of tenant removal
+      debug:
+        msg: "Tenant removal result: {{tenant_removal_result }}"
+
+
