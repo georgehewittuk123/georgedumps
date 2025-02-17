@@ -1,0 +1,10 @@
+[apic:vars]
+username=admin
+password=daggerheart54
+ansible_python_interpreter="/home/george/Desktop/ansible-virtualenv/aci_ansible_learning_labs_code_samples/intro_module/venv/bin/python"
+
+[apic]
+10.200.30.80
+
+
+

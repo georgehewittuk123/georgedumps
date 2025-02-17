@@ -1,0 +1,20 @@
+---
+- name: USE ACI REST MODULE
+  hosts: apic
+  connection: local
+  gather_facts: False
+  vars_prompt:
+   - name: "tenant"
+     prompt: "What woudl you like to name your Tenant?"
+     private: no
+
+  tasks:
+    - name: ENSURE LAB WORK IS CLEANED UP
+      aci_rest:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        method: "delete"
+        validate_certs: False
+        path: "api/mo/uni/tn-{{ tenant }}.json"
+
