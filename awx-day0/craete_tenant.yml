@@ -1,7 +1,6 @@
 ---
 - name: ENSURE APPLICATION CONFIGURATION EXISTS
   hosts: apic
-  connection: local
   gather_facts: False
 
   tasks:
