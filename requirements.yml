@@ -1,4 +1,4 @@
 --- 
 collections:
-- name: cisco.Aci
+- name: cisco.aci
   source: https://galaxy.ansible.com # Testing
