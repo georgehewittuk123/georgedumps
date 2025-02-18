@@ -14,3 +14,16 @@
         validate_certs: False
         tenant: "{{ tenant }}"
         description: "Tenant Created Using Ansible"
+    
+      - name: Query ACI for Tenants
+        cisco.aci.aci_rest:
+          host: "{{ansible_host}}"
+          username: "{{username}}"
+          password: "{{password}}"
+          validate_certs: False
+          method: get
+          path: /api/node/mo/uni/tn-{{ tenant }}.json
+        register: query_result #Register the response to query_result yes
+      - name: Debug API Response
+        debug:
+          var: query_result
