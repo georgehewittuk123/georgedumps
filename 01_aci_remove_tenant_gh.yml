@@ -17,7 +17,7 @@
         state: "absent"
         validate_certs: False
         tenant: "{{ tenant }}"
-      register: tenant_removal_result # Capture the result Bye
+      register: tenant_removal_result # Capture the result Number2
 
     - name: Display result of tenant removal
       debug:
