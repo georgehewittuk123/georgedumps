@@ -2,19 +2,18 @@
 - name: Get a list of tenants
   hosts: apic
   connection: local
-  gather_facts: False
+  gather_facts: false
   tasks:
-  - name: Query ACI for Tenants
-    cisco.aci.aci_rest:
-      host: "{{ansible_host}}"
-      username: "{{username}}"
-      password: "{{password}}"
-      validate_certs: False
-      method: get
-      path: /api/node/class/fvTenant.json
-    register: query_result #Register the response to query_result
-  - name: Debug API Response
-    debug:
-      var: query_result
-  
- 
+    - name: Query ACI for Tenants
+      cisco.aci.aci_rest:
+        host: "{{ ansible_host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: false
+        method: get
+        path: /api/node/class/fvTenant.json
+      register: query_result # Register the response to query_result
+
+    - name: Debug API Response
+      ansible.builtin.debug:
+        var: query_result # Used FQDN for debug module
