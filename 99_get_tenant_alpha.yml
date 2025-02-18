@@ -12,7 +12,7 @@
       validate_certs: False
       method: get
       path: /api/node/mo/uni/tn-ALPHA.json
-    register: query_result #Register the response to query_result
+    register: query_result #Register the response to query_result yes
   - name: Debug API Response
     debug:
       var: query_result
