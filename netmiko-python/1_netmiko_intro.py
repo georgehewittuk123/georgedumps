@@ -11,7 +11,7 @@ if __name__ == "__main__": #if someone imports this code don't run whatever is b
         "password" : getpass(),
     }
     
-    netmiko_device = ConnectHandler((**device_dict))
+    netmiko_device = ConnectHandler(**device_dict)
     print(netmiko_device.find_prompt())
     print(
             netmiko_device.send_command("show version | include Version")
