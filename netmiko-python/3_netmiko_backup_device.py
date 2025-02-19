@@ -18,13 +18,10 @@ if __name__ == "__main__": #if someone imports this code as a module it doesn't 
             try:
                 netmiko_device = ConnectHandler(**device)  # Unpack each device dictionary
                 print(f"Connected to {device['host']}")
-                bconfig = netmiko_device.send_command('show running-config')
-
-                # Open the file and append to preserve previous backup
-                with open('backup_config.txt', 'a') as file:
-                    file.write(f"\n# Backup for {device['host']}:\n")
-                    file.write(bconfig)
-                print(f"Disconnected from {device['host']}\n")
+                output = netmiko_device.send_command('show running-config')
+                with open('backup_config.txt', 'w') as file:
+                    file.write(output)
+              
             except Exception as e:
                 print(f"Failed to connect to {device['host']}: {str(e)}")
                 # Optionally print the full traceback
