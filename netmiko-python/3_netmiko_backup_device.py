@@ -22,7 +22,7 @@ if __name__ == "__main__": #if someone imports this code as a module it doesn't 
 
                 # Open the file and append to preserve previous backup
                 with open('backup_config.txt', 'a') as file:
-                    file.write(f"\n# Backup for {device['host']} on {current_date}:\n")  # Include date in the header
+                    file.write(f"\n# Backup for {device['host']}:\n")
                     file.write(bconfig)
                 print(f"Disconnected from {device['host']}\n")
             except Exception as e:
