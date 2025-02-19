@@ -7,11 +7,11 @@ import datetime
 if __name__ == "__main__": #if someone imports this code as a module it doesn't just run whatever is below here automatically. allows us to seperate code a little bit
     devices = [ #I've added multiple devices so a LIST of DICTIONARIES
         {
-            "device_type" :  "cisco_ios_telnet",
+            "device_type" :  "cisco_ios", # SSH
             "host" : "10.200.30.246",
             "username" : "admin",
             "password" : "admin",
-            "secret" : "admin",
+            "secret" : "admin", # Enable password
         },
     ]
 
