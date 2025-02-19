@@ -10,7 +10,8 @@ if __name__ == "__main__": #if someone imports this code as a module it doesn't 
             "device_type" :  "cisco_ios_telnet",
             "host" : "10.200.30.246",
             "username" : "admin",
-            "password" : getpass(),
+            "password" : "admin",
+            "secret" : "admin",
         },
     ]
 
