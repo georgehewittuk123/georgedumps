@@ -22,7 +22,7 @@ if __name__ == "__main__": #if someone imports this code as a module it doesn't 
                 netmiko_device.enable() # Connect to enable
                 output = netmiko_device.send_command('show ip int brief',use_textfsm=True) # testfsm tries to structure it
                 with open('data.txt', 'w') as file:
-                    file.write(output)
+                    file.write(str(output))
 
             except Exception as e:
                 print(f"Failed to connect to {device['host']}: {str(e)}")
