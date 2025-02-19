@@ -21,8 +21,8 @@ if __name__ == "__main__": #if someone imports this code as a module it doesn't 
                 print(f"Connected to {device['host']}")
                 netmiko_device.enable() # Connect to enable
                 output = netmiko_device.send_command('show ip int brief',use_textfsm=True) # testfsm tries to structure it
-                with open('data.txt', 'w') as file:
-                    file.write(str(output))
+                with open(f'{host}_data.json', 'w') as file:
+                    json.dump(output, file, indent=4)
 
             except Exception as e:
                 print(f"Failed to connect to {device['host']}: {str(e)}")
