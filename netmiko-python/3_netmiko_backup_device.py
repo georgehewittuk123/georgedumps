@@ -18,6 +18,7 @@ if __name__ == "__main__": #if someone imports this code as a module it doesn't 
             try:
                 netmiko_device = ConnectHandler(**device)  # Unpack each device dictionary
                 print(f"Connected to {device['host']}")
+                netmiko_device.enable() # Connect to enable
                 output = netmiko_device.send_command('show running-config')
                 with open('backup_config.txt', 'w') as file:
                     file.write(output)
