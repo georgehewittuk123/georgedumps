@@ -6,13 +6,13 @@ from getpass import getpass
 if __name__ == "__main__": #if someone imports this code don't run whatever is below here automatically. allows us to seperate code a little bit
     devices = [ #I've added multiple devices so a LIST of DICTIONARIES
         {
-            "device_type" :  "cisco_ios", # Use SSH this time i think
+            "device_type" :  "cisco_ios_telnet",
             "host" : "10.200.30.245",
             "username" : "admin",
             "password" : getpass(),
         },
         {
-            "device_type" :  "cisco_ios", # Use SSH this time i think
+            "device_type" :  "cisco_ios_telnet",
             "host" : "10.200.30.246",
             "username" : "admin",
             "password" : getpass(),
