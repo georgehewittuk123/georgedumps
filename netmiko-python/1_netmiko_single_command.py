@@ -16,7 +16,7 @@ if __name__ == "__main__": #if someone imports this code don't run whatever is b
     print(
             netmiko_device.send_command("show version | include Version")
     )
-    print(dir(netmiko_device))
-    netmiko_device.disconnect()
+    print(dir(netmiko_device)) # printers netmiko dictionary of what it can do command wise
+    netmiko_device.disconnect() # netmiko disconnect
 
 

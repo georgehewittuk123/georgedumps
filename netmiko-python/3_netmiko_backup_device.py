@@ -8,7 +8,7 @@ if __name__ == "__main__": #if someone imports this code as a module it doesn't 
     devices = [ #I've added multiple devices so a LIST of DICTIONARIES
         {
             "device_type" :  "cisco_ios_telnet",
-            "host" : "10.200.30.245",
+            "host" : "10.200.30.246",
             "username" : "admin",
             "password" : getpass(),
         },
